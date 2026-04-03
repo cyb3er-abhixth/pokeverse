@@ -5,8 +5,8 @@ Designed with modern UI principles, smooth animations, and complete responsivene
 
 🌐 Live Demo
 
-👉 View on GitHub Pages: Replace this with your deployed URL
-https://<username>.github.io/pokemon-hub/
+👉 View on GitHub Pages:
+https://cyb3er-abhixth.github.io/pokeverse/
 
 🖼️ Features Overview
 ⭐ Homepage
@@ -18,18 +18,14 @@ Smooth transitions, hover effects & shadows
 🔍 Pokédex
 Fully interactive Pokédex with 1,025+ Pokémon
 Search by name, number, or type
-Type-based dynamic filtering
-Pokémon cards with:
-Type-colored gradients
-Animated hover states
-Pokéball watermark
-Detailed modal popup:
-Stats, abilities, evolution chain, flavor text
-Infinite scroll for optimized loading
-Fully responsive across all devices
+Dynamic type filtering
+Pokémon cards with type gradients, hover animations & Pokéball watermark
+Detailed modal popups with stats, abilities, flavor text & evolution chains
+Infinite scrolling for optimized loading
+Fully responsive for all devices
 ⚙️ Special Mechanics
 
-A hub covering every major battle mechanic:
+Covers every major battle mechanic:
 
 Mega Evolution
 Primal Reversion
@@ -40,78 +36,80 @@ Ultra Burst
 Ash-Greninja
 Regional Forms
 
-Each mechanic comes with:
+Each with:
 
-Color-coded interactive UI
-Grids, filters & detailed info pages
+Interactive UI
+Grids, filters & stat details
 Smooth hover animations
 Mobile-friendly layout
 💥 Mega Evolution
 Interactive Mega Evolution grid
 Generation filters
-Popups with stats & details
-Clean animations and responsive styling
+Stat popups
+Clean responsive animations
 🔥 Primal Reversion
-Primal Groudon & Kyogre featured with frosted-glass UI
-Stat comparison layout
+Frosted-glass UI for Groudon & Kyogre
+Side-by-side stat comparison
 Animated Pokéball hero background
-Detailed lore & mechanics explanation
+Lore & mechanic breakdown
 ⚡ Z-Moves
-Searchable & filterable move index
-Filter by: type, category, power, name
+Searchable, filterable Z-Move index
+Filters for type, category, power, name
 Radial glow hover effects
 Clean, readable UI
 📏 Dynamax & Gigantamax
-Interactive guide with gradients
-Animated cards showing Max Moves
+Vibrant gradient guides
+Animated Max Move cards
 Filters & sortable tables
-Responsive and visually dynamic
+Fully responsive
 💎 Terastal
-Highlights Tera Types with crystal-style visuals
-Strategy breakdowns & examples
-Clean layout for both mobile and desktop
+Crystal-style visuals for Tera Types
+Strategy examples & guides
+Clean responsive layout
 🌓 Ash-Greninja & Ultra Burst
 Dedicated hero sections
-Glow effects, timelines, stats, and lore
-Interactive grids and media examples
-Fully responsive
+Glow animations, timelines, stats & lore
+Interactive grids & media
+Mobile-friendly
 🌍 Regional Forms
-Explore Alolan, Galarian, Hisuian & Paldean variants
+Alola, Galar, Hisui & Paldea forms
 Dynamic grid with filters & animated modals
-Glassmorphism design
+Glassmorphism UI
 Animated stat bars
 🧢 Ash Ketchum’s Pokémon Team
-Full list of Ash’s Pokémon from Kanto → Journeys
+Full list from Kanto → Journeys
 Region info cards
 Search & type filter
-Glowing UI, glass effects, tab-based navigation
+Glass effects, glow animations, and tab navigation
 🎨 Design Highlights
-Fully mobile-friendly & responsive
+Fully responsive on all devices
 Smooth hover animations & glow effects
-Gradient and glassmorphism design
-Consistent navigation across all pages
-Lightweight, clean layout optimized for performance
+Modern gradient & glassmorphism design
+Consistent multi-page navigation
+Lightweight & performance-optimized
 ⚡ Technologies Used
-HTML5 & CSS3 – Modern responsive UI
-JavaScript – Dynamic content, filtering, modals, animations
-PokéAPI – Real-time Pokémon data
-GitHub Pages – Hosting & automatic deployment
+HTML5 & CSS3 – Responsive layout & styling
+JavaScript – Dynamic content, modals, filtering, animations
+PokéAPI – Real-time data
+GitHub Pages – Hosting & deployment
 📦 Installation
 
 Clone the repo:
 
-git clone https://github.com/<username>/pokemon-hub.git
+git clone https://github.com/cyb3er-abhixth/pokeverse.git
 
 Open the project:
 
-cd pokemon-hub
+cd pokeverse
 
-Run locally (no build required):
+Run locally (no build needed):
 
 open index.html
 
-—or simply drag it into your browser.
+—or just drag the file into your browser.
 
 📜 License
 
-This project is for fan and educational purposes. Pokémon content is owned by Nintendo / Game Freak / The Pokémon Company and this project is owned by cyb3er-abhixth.
+This project is for fan and educational purposes.
+Pokémon content belongs to Nintendo / Game Freak / The Pokémon Company.
+Project created by cyb3er-abhixth.
