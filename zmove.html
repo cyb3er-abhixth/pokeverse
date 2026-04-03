@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Pokeverse HQ | Z-Moves</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="./Images/pokeball-bg.png" type="image/png" />
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="css/zmoves.css">
+	</head>
+	<body>
+		<header>
+		<h1 class="left">
+			<a href="home.html">
+			<img src="Images/pokeball-bg2.png" alt="Pokemon Logo" />
+			</a>
+		</h1>
+		<nav class="menu">
+			<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="pokedex.html">Pokédex</a></li>
+			<li><a href="special.html">Special Mechanics</a></li>
+			<li><a href="ashpokemon.html">Team Of Ash</a></li>
+			</ul>
+		</nav>
+
+		<a id="menu-icon"><img src="Images/menu.svg" /></a>
+		<nav id="mobile-menu">
+			<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="pokedex.html">Pokédex</a></li>
+			<li><a href="special.html">Special Mechanics</a></li>
+			<li><a href="ashpokemon.html">Team Of Ash</a></li>
+			</ul>
+		</nav>
+		<span class="close"><img src="Images/close.svg" alt="" /></span>
+		</header>
+		<span class="overlay"></span>
+
+		<section class="zmoves-hero">
+			<h1>Z-Moves</h1>
+			<p>Harness the ultimate power of Pokémon with Z-Moves!</p>
+
+			<section class="zinfo">
+
+			<h2>⚡ Z-Moves — Complete Guide</h2>
+
+			<div class="zinfo-block">
+				<h3>🔹 What are Z-Moves?</h3>
+				<p>
+				Z-Moves are powerful, one-time attacks introduced in 
+				Pokémon Sun and Moon. They allow a Pokémon to unleash a 
+				super-powered version of a move once per battle.
+				</p>
+			</div>
+
+			<div class="zinfo-block">
+				<h3>🔹 Core Mechanics</h3>
+				<ul>
+				<li>Can only be used once per battle</li>
+				<li>Require a Z-Crystal</li>
+				<li>Pokémon must know a matching move</li>
+				<li>Activated via a Z-Ring / Z-Power Ring</li>
+				</ul>
+
+				<p class="example">
+				⚡ Pikachu + Thunderbolt + Electrium Z → <strong>Gigavolt Havoc</strong>
+				</p>
+			</div>
+
+			<div class="zinfo-block">
+				<h3>🔹 Types of Z-Moves</h3>
+
+				<table class="z-table">
+				<tr>
+					<th>Type</th>
+					<th>Z-Move</th>
+				</tr>
+				<tr><td>Electric</td><td>Gigavolt Havoc ⚡</td></tr>
+				<tr><td>Fire</td><td>Inferno Overdrive 🔥</td></tr>
+				<tr><td>Water</td><td>Hydro Vortex 💧</td></tr>
+				<tr><td>Grass</td><td>Bloom Doom 🌿</td></tr>
+				<tr><td>Flying</td><td>Supersonic Skystrike 🌪</td></tr>
+				</table>
+
+				<p>These scale with the base move power.</p>
+			</div>
+
+			<div class="zinfo-block">
+				<h3>🌟 Status Z-Moves</h3>
+				<ul>
+					<li>Z-Swords Dance → boosts Attack sharply</li>
+					<li>Z-Protect → boosts Speed</li>
+					<li>Z-Rain Dance → resets stats + rain</li>
+				</ul>
+			</div>
+
+			<div class="zinfo-block">
+				<h3>🔥 Exclusive Z-Moves</h3>
+				<ul>
+					<li>Pikachu → Catastropika</li>
+					<li>Eevee → Extreme Evoboost</li>
+					<li>Incineroar → Malicious Moonsault</li>
+					<li>Lycanroc → Splintered Stormshards</li>
+				</ul>
+			</div>
+
+			<div class="zinfo-block">
+				<h3>🔹 Power System</h3>
+
+				<table class="z-table">
+				<tr>
+					<th>Base Move</th>
+					<th>Z-Move Power</th>
+				</tr>
+				<tr><td>60</td><td>120</td></tr>
+				<tr><td>80</td><td>160</td></tr>
+				<tr><td>100</td><td>180</td></tr>
+				</table>
+			</div>
+
+			</section>
+
+			<div class="filters">
+				<input type="text" id="searchPokemon" placeholder="Search by Z-Move name">
+				<select id="filterCategory">
+					<option value="">All Categories</option>
+					<option value="standard">Standard Z-Moves</option>
+					<option value="signature">Signature/Unique</option>
+					<option value="lets-go">Let's Go Exclusive</option>
+					<option value="legendary">Legendary/Other</option>
+				</select>
+				<select id="filterType">
+					<option value="">All Types</option>
+				</select>
+				<select id="filterPower">
+					<option value="">All Powers</option>
+					<option value="low">≤ 80</option>
+					<option value="medium">81–120</option>
+					<option value="high">> 120</option>
+				</select>
+			</div>
+		</section>
+
+		<section class="zmoves-grid" id="zmovesGrid">
+			<!-- Dynamic Z-Move cards will be inserted here -->
+		</section>
+		<script src="./js/zmoves.js"></script>
+	</body>
+</html>

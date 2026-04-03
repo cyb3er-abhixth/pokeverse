@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pokeverse HQ | Mega Evolution</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./Images/pokeball-bg.png" type="image/png" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/mega.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="left">
+        <a href="home.html">
+          <img src="Images/pokeball-bg.png" />
+        </a>
+      </h1>
+
+      <nav class="menu">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="pokedex.html">Pokédex</a></li>
+          <li><a href="special.html">Special Mechanics</a></li>
+          <li><a href="ashpokemon.html">Team Of Ash</a></li>
+        </ul>
+      </nav>
+
+      <a id="menu-icon"><img src="images/menu.svg" /></a>
+
+      <nav id="mobile-menu">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="pokedex.html">Pokédex</a></li>
+          <li><a href="special.html">Special Mechanics</a></li>
+          <li><a href="ashpokemon.html">Team Of Ash</a></li>
+        </ul>
+      </nav>
+
+      <span class="close"><img src="images/close.svg" /></span>
+    </header>
+
+    <span class="overlay"></span>
+
+    <section class="mega-hero">
+      <h1>Mega Evolutions</h1>
+      <p>Click a Pokémon to see its Mega Form</p>
+    </section>
+
+    <section class="mega-info">
+		<section class="wrapper">
+			<h2>What is Mega Evolution?</h2>
+
+			<p>
+				Mega Evolution is a temporary transformation introduced in Pokémon X and
+				Y. It allows certain Pokémon to unlock hidden power during battle using
+				a Mega Stone.
+			</p>
+
+			<h3>Key Features</h3>
+
+			<ul>
+				<li>Only happens during battle</li>
+				<li>Requires a Mega Stone</li>
+				<li>Only one Mega Evolution per battle</li>
+				<li>Massive stat increases</li>
+				<li>Some Pokémon change type</li>
+				<li>Some Pokémon gain new abilities</li>
+			</ul>
+
+			<h3>Mega Evolution Origins</h3>
+
+			<p>
+				Mega Evolution was discovered in the Kalos region and is believed to be
+				connected to the ultimate weapon fired 3000 years ago during a great
+				war.
+			</p>
+
+			<h3>Mega Evolution Effects</h3>
+
+			<ul>
+				<li>HP stays the same</li>
+				<li>Other stats increase dramatically</li>
+				<li>Abilities can change</li>
+				<li>Types may change</li>
+			</ul>
+		</section>
+    </section>
+
+    <section class="filters">
+		<h3>Filter by Generation</h3>
+
+		<select id="genFilter">
+			<option value="all">All Generations</option>
+			<option value="1">Gen 1</option>
+			<option value="2">Gen 2</option>
+			<option value="3">Gen 3</option>
+			<option value="4">Gen 4</option>
+			<option value="5">Gen 5</option>
+			<option value="6">Gen 6</option>
+		</select>
+    </section>
+
+    <section id="pokemonGrid" class="pokemon-grid"></section>
+
+    <!-- POPUP -->
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span id="closeBtn">&times;</span>
+
+        <img id="popupImg" />
+
+        <h2 id="popupName"></h2>
+
+        <div id="types"></div>
+
+        <div class="stats">
+          <div class="stat">
+            <span>HP</span>
+            <div class="bar"><div id="hp"></div></div>
+          </div>
+
+          <div class="stat">
+            <span>ATK</span>
+            <div class="bar"><div id="atk"></div></div>
+          </div>
+
+          <div class="stat">
+            <span>DEF</span>
+            <div class="bar"><div id="def"></div></div>
+          </div>
+
+          <div class="stat">
+            <span>SP ATK</span>
+            <div class="bar"><div id="spatk"></div></div>
+          </div>
+
+          <div class="stat">
+            <span>SP DEF</span>
+            <div class="bar"><div id="spdef"></div></div>
+          </div>
+
+          <div class="stat">
+            <span>SPEED</span>
+            <div class="bar"><div id="speed"></div></div>
+          </div>
+        </div>
+
+        <p><b>Ability:</b> <span id="ability"></span></p>
+
+        <p id="description"></p>
+      </div>
+    </div>
+    <script src="js/mega.js"></script>
+  </body>
+</html>

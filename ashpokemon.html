@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Pokeverse HQ | Team of Ash</title>
+
+		<link rel="icon" href="images/pokeball-bg.png" type="image/png">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/ash.css">
+	</head>
+
+	<body>
+
+		<header>
+			<h1 class="left">
+				<a href="home.html">
+					<img src="images/pokeball-bg2.png" alt="Pokemon Logo" />
+				</a>
+			</h1>
+
+			<nav class="menu">
+				<ul>
+					<li><a href="home.html">Home</a></li>
+					<li><a href="pokedex.html">Pokédex</a></li>
+					<li><a href="special.html">Special Mechanics</a></li>
+					<li><a href="ashpokemon.html">Team Of Ash</a></li>
+				</ul>
+			</nav>
+
+			<a id="menu-icon"><img src="images/menu.svg" /></a>
+
+			<nav id="mobile-menu">
+				<ul>
+					<li><a href="home.html">Home</a></li>
+					<li><a href="pokedex.html">Pokédex</a></li>
+					<li><a href="special.html">Special Mechanics</a></li>
+					<li><a href="ashpokemon.html">Team Of Ash</a></li>
+				</ul>
+			</nav>
+
+			<span class="close"><img src="images/close.svg" alt="" /></span>
+		</header>
+		<span class="overlay"></span>
+
+		<!-- 🔥 PREMIUM HERO -->
+		<section class="hero">
+			<div class="hero-content">
+				<h1>⚡ Ash Ketchum’s Pokémon</h1>
+				<p>
+					Journey through every region with Ash and explore his strongest Pokémon,
+					iconic battles, and legendary achievements across the Pokémon world.
+				</p>
+
+				<div class="hero-stats">
+					<div>🏆 Champion: <b>Alola</b></div>
+					<div>🌍 Regions: <b>8+</b></div>
+					<div>⚡ Ace: <b>Pikachu</b></div>
+				</div>
+			</div>
+
+			<div class="hero-image">
+				<img src="images/025Pikachu.png">
+			</div>
+		</section>
+
+		<!-- 🌍 INFO SECTION -->
+		<section class="region-info">
+		<h2>🌍 Regions & Battles</h2>
+
+		<div class="info-grid">
+
+			<div class="info-card">
+			<h3>Kanto</h3>
+			<p>First journey. Faced Brock, Misty, and Gary. Orange League Champion.</p>
+			</div>
+
+			<div class="info-card">
+			<h3>Johto</h3>
+			<p>Stronger rivals and growth. Silver Conference Top 8.</p>
+			</div>
+
+			<div class="info-card">
+			<h3>Sinnoh</h3>
+			<p>Iconic rivalry with Paul. One of Ash’s best strategic teams.</p>
+			</div>
+
+			<div class="info-card">
+			<h3>Kalos</h3>
+			<p>Reached finals. Ash-Greninja peak battle performance.</p>
+			</div>
+
+			<div class="info-card">
+			<h3>Alola</h3>
+			<p>🏆 Ash becomes Champion for the FIRST time.</p>
+			</div>
+
+		</div>
+		</section>
+
+		<!-- CONTROLS -->
+		<section class="controls">
+		<input type="text" id="search" placeholder="Search Pokémon...">
+
+		<select id="typeFilter">
+			<option value="all">All Types</option>
+			<option value="fire">Fire</option>
+			<option value="water">Water</option>
+			<option value="grass">Grass</option>
+			<option value="electric">Electric</option>
+			<option value="flying">Flying</option>
+		</select>
+		</section>
+
+		<!-- REGION TABS -->
+		<section class="tabs">
+			<div class="tab" data-region="all">All</div>
+			<div class="tab" data-region="kanto">Kanto</div>
+			<div class="tab" data-region="orange islands">Orange Islands</div>
+			<div class="tab" data-region="johto">Johto</div>
+			<div class="tab" data-region="hoenn">Hoenn</div>
+			<div class="tab" data-region="sinnoh">Sinnoh</div>
+			<div class="tab" data-region="unova">Unova</div>
+			<div class="tab" data-region="kalos">Kalos</div>
+			<div class="tab" data-region="alola">Alola</div>
+			<div class="tab" data-region="journeys (global)">Journeys</div>
+		</section>
+
+		<section id="pokemonGrid" class="pokemon-grid"></section>
+
+		<script src="js/ash.js"></script>
+	</body>
+</html>

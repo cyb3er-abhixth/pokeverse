@@ -1,0 +1,348 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffcb05, #ff1c1c);
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+}
+
+ul,li {
+    list-style: none;
+    padding: none;
+}   
+
+.terastal-section {
+  position: relative;
+  max-width: 1250px;
+  margin: 60px auto;
+  padding: 30px 20px 10px;
+  overflow: hidden;
+}
+
+.terastal-section {
+  position: relative;
+  max-width: 1250px;
+  margin: 60px auto;
+  padding: 30px 20px 10px;
+  overflow: hidden;
+}
+
+.tera-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.tera-glow-1 {
+  width: 280px;
+  height: 280px;
+  background: rgba(64, 200, 255, 0.25);
+  top: 20px;
+  right: -50px;
+}
+
+.tera-glow-2 {
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 220, 110, 0.22);
+  bottom: 30px;
+  left: -30px;
+}
+
+.tera-header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.tera-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(0, 200, 255, 0.85), rgba(255, 195, 43, 0.85));
+  color: #fff8e8;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  margin-bottom: 14px;
+}
+
+.tera-header h2 {
+  font-size: 2.4rem;
+  margin: 10px 0 14px;
+  color: #fff9ef;
+  text-shadow: 0 3px 12px rgba(120, 40, 0, 0.25);
+}
+
+.tera-intro {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.06rem;
+  line-height: 1.9;
+  color: rgba(255, 249, 239, 0.96);
+}
+
+.tera-grid,
+.tera-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.tera-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.1));
+  border: 1px solid rgba(255, 245, 220, 0.28);
+  border-radius: 26px;
+  padding: 28px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 16px 34px rgba(120, 50, 0, 0.14);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.tera-card:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.14));
+  box-shadow: 0 22px 42px rgba(120, 50, 0, 0.2);
+}
+
+.tera-card.full {
+  margin-bottom: 24px;
+}
+
+.tera-card h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.45rem;
+  color: #fff4d8;
+  text-shadow: 0 2px 8px rgba(110, 35, 0, 0.22);
+}
+
+.tera-card p,
+.tera-card li {
+  color: rgba(255, 250, 241, 0.94);
+  line-height: 1.85;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.tera-points {
+  padding-left: 20px;
+}
+
+.tera-points li {
+  margin-bottom: 10px;
+}
+
+.tera-timer {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.tera-timer .turn {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  padding: 14px 12px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(64, 200, 255, 0.22), rgba(255, 195, 43, 0.18));
+  border: 1px solid rgba(255, 240, 210, 0.24);
+  color: #fff8ef;
+  font-weight: 800;
+}
+
+.tera-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tera-table thead th {
+  background: linear-gradient(135deg, rgba(0, 180, 255, 0.45), rgba(255, 170, 60, 0.35));
+  color: #fff8ec;
+  font-size: 1rem;
+}
+
+.tera-table th,
+.tera-table td {
+  padding: 15px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 244, 220, 0.12);
+  color: rgba(255, 249, 240, 0.95);
+}
+
+.tera-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tera-highlight {
+  border: 1px solid rgba(255, 226, 148, 0.35);
+  background: linear-gradient(145deg, rgba(255, 215, 120, 0.12), rgba(255, 120, 70, 0.1));
+}
+
+@media (max-width: 900px) {
+  .tera-grid, .tera-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .terastal-section {
+    margin: 40px auto;
+    padding: 20px 15px 10px;
+  }
+  .tera-glow-1 {
+    width: 200px;
+    height: 200px;
+    top: 10px;
+    right: -30px;
+  }
+  .tera-glow-2 {
+    width: 150px;
+    height: 150px;
+    bottom: 20px;
+    left: -20px;
+  }
+  .tera-header {
+    margin-bottom: 20px;
+  }
+  .tera-badge {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  .tera-header h2 {
+    font-size: 2rem;
+  }
+  .tera-intro {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .tera-grid,
+  .tera-split {
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+  .tera-card {
+    padding: 24px;
+    border-radius: 24px;
+  }
+  .tera-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  .tera-card p,
+  .tera-card li {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  .tera-points {
+    padding-left: 15px;
+  }
+  .tera-timer {
+    gap: 10px;
+    margin-top: 15px;
+  }
+  .tera-timer .turn {
+    min-width: 100px;
+    padding: 12px 10px;
+    border-radius: 16px;
+  }
+  .tera-table th,
+  .tera-table td {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tera-card {
+    padding: 22px 18px;
+    border-radius: 22px;
+  }
+
+  .tera-header h2 {
+    font-size: 1.65rem;
+  }
+
+  .tera-intro,
+  .tera-card p,
+  .tera-table th,
+  .tera-table td,
+  .tera-points li {
+    font-size: 0.95rem;
+  }
+
+  .tera-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .terastal-section {
+    margin: 20px auto;
+    padding: 15px 10px 10px;
+  }
+  .tera-glow-1 {
+    width: 150px;
+    height: 150px;
+    top: 5px;
+    right: -20px;
+  }
+  .tera-glow-2 {
+    width: 120px;
+    height: 120px;
+    bottom: 15px;
+    left: -15px;
+  }
+  .tera-header h2 {
+    font-size: 1.4rem;
+  }
+  .tera-intro {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .tera-grid,
+  .tera-split {
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  .tera-card {
+    padding: 18px 15px;
+    border-radius: 20px;
+  }
+  .tera-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .tera-card p,
+  .tera-card li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  .tera-points {
+    padding-left: 10px;
+  }
+  .tera-timer {
+    gap: 8px;
+    margin-top: 12px;
+    flex-direction: column;
+  }
+  .tera-timer .turn {
+    min-width: auto;
+    padding: 10px 8px;
+    border-radius: 14px;
+  }
+  .tera-table th,
+  .tera-table td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+}

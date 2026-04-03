@@ -1,0 +1,161 @@
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffcb05, #ff1c1c);
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+}
+/* Wrapper for the page */
+.wrapper.special-mechanics {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  text-align: center;
+  font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+}
+
+/* Page title */
+.wrapper.special-mechanics h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #253858;
+}
+
+/* Container for buttons */
+.mechanic-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Each button */
+.mechanic-buttons .button {
+  padding: 18px 28px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  min-width: 180px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  display: inline-block;
+}
+
+/* Hover effect */
+.mechanic-buttons .button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Color-coded mechanics */
+.button.red {
+  background: #ff1c1c;
+} /* Mega Evolution */
+.button.yellow {
+  background: #ffcb05;
+  color: #000;
+} /* Primal Reversion */
+.button.blue {
+  background: #1c75ff;
+} /* Z-Moves */
+.button.green {
+  background: #00c853;
+} /* Dynamax */
+.button.purple {
+  background: #9c27b0;
+} /* Gigantamax */
+.button.orange {
+  background: #ff9800;
+} /* Terastal Phenomenon */
+.button.pink {
+  background: #e91e63;
+} /* Ash-Greninja */
+.button.teal {
+  background: #009688;
+} /* Ultra Burst */
+.button.gray {
+  background: #607d8b;
+} /* Regional Forms */
+
+/* Responsive */
+@media all and (max-width: 980px) {
+  .mechanic-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .mechanic-buttons .button {
+    width: 100%;
+    padding: 16px 24px;
+  }
+
+  .wrapper.special-mechanics {
+    width: 95%;
+  }
+
+  .wrapper.special-mechanics h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+}
+
+/* Mobile: 480px - 768px */
+@media (max-width: 768px) {
+  .wrapper.special-mechanics {
+    width: 95%;
+    margin: 30px auto;
+  }
+
+  .wrapper.special-mechanics h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .mechanic-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mechanic-buttons .button {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 15px;
+    min-width: auto;
+  }
+}
+
+/* Small Mobile: below 480px */
+@media (max-width: 480px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .wrapper.special-mechanics {
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  .wrapper.special-mechanics h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .mechanic-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mechanic-buttons .button {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 13px;
+    border-radius: 20px;
+    min-width: auto;
+  }
+}

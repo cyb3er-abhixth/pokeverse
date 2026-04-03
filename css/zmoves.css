@@ -1,0 +1,356 @@
+/* Body style (matches your other UI) */
+body {
+	background: linear-gradient(135deg, #ffcb05, #ff1c1c);
+	min-height: 100vh;
+	color: white;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+ul,li {
+	list-style: none;
+	padding-left: 0;
+}
+
+/* Animated Poké Ball in background */
+.zmoves-hero::after {
+	content: "";
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	background: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png");
+	background-size: contain;
+	opacity: 0.08;
+	bottom: -100px;
+	left: -100px;
+	animation: moveBG 60s linear infinite;
+	pointer-events: none;
+}
+
+/* Hero Section */
+.zmoves-hero {
+	text-align: center;
+	padding: 60px 20px;
+	position: relative;
+	z-index: 1;
+}
+
+.zmoves-hero h1 {
+	font-size: 3em;
+	margin-bottom: 10px;
+}
+
+.zmoves-hero p {
+	font-size: 1.2em;
+}
+
+/* Z-Moves Grid */
+.zmoves-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+	padding: 40px 20px;
+}
+
+/* Z-Moves Card */
+.zmoves-card {
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	padding: 20px;
+	text-align: center;
+	transition: transform 0.3s, background 0.3s;
+	position: relative;
+	overflow: hidden;
+}
+
+.zmoves-card::before {
+	content: "";
+	position: absolute;
+	width: 150%;
+	height: 150%;
+	background: radial-gradient(circle, rgba(255,203,5,0.3), transparent 70%);
+	top: -25%;
+	left: -25%;
+	opacity: 0;
+	transition: 0.4s;
+	opacity: 1;
+}
+
+.zmoves-card:hover {
+	transform: translateY(-10px);
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.zmoves-card img {
+	width: 80px;
+	margin-bottom: 15px;
+}
+
+.zmoves-card h2 {
+	margin: 10px 0;
+}
+
+.zmoves-card p {
+	margin: 5px 0;
+	font-size: 0.95em;
+}
+
+/* Background animation */
+@keyframes moveBG {
+	0% { transform: translate(0,0) rotate(0deg); }
+	50% { transform: translate(50px,-50px) rotate(180deg); }
+	100% { transform: translate(0,0) rotate(360deg); }
+}
+
+/* Filters */
+.filters {
+	margin-top: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+}
+
+.filters input,
+.filters select {
+	padding: 8px 12px;
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	font-size: 1em;
+}
+
+/* INFO SECTION */
+.zinfo {
+padding: 40px 20px;
+max-width: 1000px;
+margin: auto;
+}
+
+.zinfo h2 {
+text-align: center;
+font-size: 2.2em;
+margin-bottom: 30px;
+}
+
+.zinfo-block {
+background: rgba(255,255,255,0.1);
+margin-bottom: 20px;
+padding: 20px;
+border-radius: 14px;
+backdrop-filter: blur(10px);
+transition: 0.3s;
+}
+
+.zinfo-block:hover {
+transform: translateY(-5px);
+background: rgba(255,255,255,0.2);
+}
+
+/* TABLE */
+.z-table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 10px;
+}
+
+.z-table th, .z-table td {
+padding: 10px;
+border-bottom: 1px solid rgba(255,255,255,0.2);
+text-align: left;
+}
+
+.z-table th {
+color: var(--dark-gray);
+}
+
+/* Example highlight */
+.example {
+margin-top: 10px;
+color: var(--dark-gray);
+font-weight: bold;
+}
+
+
+/* ============================================
+RESPONSIVE DESIGN
+============================================ */
+
+/* Tablet: 768px - 980px */
+@media (max-width: 980px) {
+	.zmoves-hero {
+		padding: 50px 20px;
+	}
+
+	.zmoves-hero h1 {
+		font-size: 2.2em;
+		margin-bottom: 8px;
+	}
+
+	.zmoves-hero p {
+		font-size: 1.1em;
+	}
+
+	.zmoves-grid {
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 15px;
+		padding: 30px 20px;
+	}
+
+	.zmoves-card {
+		padding: 18px;
+	}
+
+	.zmoves-card img {
+		width: 70px;
+	}
+
+	.filters {
+		gap: 8px;
+		margin-top: 15px;
+	}
+
+	.filters input,
+	.filters select {
+		padding: 7px 10px;
+		font-size: 0.9em;
+	}
+}
+
+	/* Mobile: 480px - 768px */
+@media (max-width: 768px) {
+	.zmoves-hero {
+		padding: 35px 15px;
+	}
+
+	.zmoves-hero h1 {
+		font-size: 1.8em;
+		margin-bottom: 6px;
+	}
+
+	.zmoves-hero p {
+		font-size: 0.95em;
+	}
+
+	.zmoves-hero::after {
+		width: 250px;
+		height: 250px;
+	}
+
+	.zmoves-grid {
+		grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+		gap: 12px;
+		padding: 20px 15px;
+	}
+
+	.zmoves-card {
+		padding: 15px;
+		border-radius: 14px;
+	}
+
+	.zmoves-card:hover {
+		transform: translateY(-8px);
+	}
+
+	.zmoves-card img {
+		width: 60px;
+		margin-bottom: 10px;
+	}
+
+	.zmoves-card h2 {
+		font-size: 16px;
+		margin: 8px 0;
+	}
+
+	.zmoves-card p {
+		font-size: 0.9em;
+		margin: 4px 0;
+	}
+
+	.filters {
+		margin-top: 15px;
+		gap: 8px;
+	}
+
+	.filters input,
+	.filters select {
+		padding: 7px 10px;
+		font-size: 0.9em;
+		max-width: 100%;
+	}
+}
+
+/* Small Mobile: below 480px */
+@media (max-width: 480px) {
+	body {
+		overflow-x: hidden;
+	}
+
+	.zmoves-hero {
+		padding: 25px 10px;
+	}
+
+	.zmoves-hero h1 {
+		font-size: 1.5em;
+		margin-bottom: 5px;
+	}
+
+	.zmoves-hero p {
+		font-size: 0.9em;
+	}
+
+	.zmoves-hero::after {
+		width: 180px;
+		height: 180px;
+		bottom: -50px;
+		left: -50px;
+	}
+
+	.zmoves-grid {
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		gap: 10px;
+		padding: 15px 10px;
+	}
+
+	.zmoves-card {
+		padding: 12px;
+		border-radius: 12px;
+	}
+
+	.zmoves-card:hover {
+		transform: translateY(-5px);
+		background: rgba(255, 255, 255, 0.25);
+	}
+
+	.zmoves-card img {
+		width: 50px;
+		margin-bottom: 8px;
+	}
+
+	.zmoves-card h2 {
+		font-size: 14px;
+		margin: 6px 0;
+	}
+
+	.zmoves-card p {
+		font-size: 0.85em;
+		margin: 3px 0;
+	}
+
+	.filters {
+		margin-top: 12px;
+		gap: 6px;
+		padding: 0 10px;
+	}
+
+	.filters input,
+	.filters select {
+		padding: 6px 8px;
+		font-size: 0.85em;
+		border-radius: 6px;
+		width: 100%;
+	}
+}

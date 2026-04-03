@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokeverse HQ | Regional Forms</title>
+    <link rel="icon" href="./images/pokeball-bg.png" type="image/png" />
+    <link rel="stylesheet" href="css/regional.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <h1 class="left">
+        <a href="home.html">
+            <img src="images/pokeball-bg2.png" alt="Pokemon Logo" />
+        </a>
+    </h1>
+    <nav class="menu">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="pokedex.html">Pokédex</a></li>
+            <li><a href="special.html">Special Mechanics</a></li>
+            <li><a href="ashpokemon.html">Team Of Ash</a></li>
+        </ul>
+    </nav>
+    <a id="menu-icon"><img src="images/menu.svg" /></a>
+    <nav id="mobile-menu">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="pokedex.html">Pokédex</a></li>
+            <li><a href="special.html">Special Mechanics</a></li>
+            <li><a href="ashpokemon.html">Team Of Ash</a></li>
+        </ul>
+    </nav>
+    <span class="close"><img src="images/close.svg" alt="" /></span>
+</header>
+<span class="overlay"></span>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>🌍 Regional Forms</h1>
+    <p>Pokémon that evolved differently across regions due to environment, climate, and culture.</p>
+    <img src="images/pokedex/raichu-alola.png" class="hero-img">
+</section>
+
+<!-- INFO -->
+<section class="info">
+
+    <h2>🌍 Regional Forms — Explained</h2>
+
+    <p>
+        Regional Forms are unique variations of Pokémon that have adapted to different environments across the Pokémon world. 
+        These adaptations are driven by climate, geography, and even human influence, resulting in changes to their 
+        appearance, typing, abilities, and behavior.
+    </p>
+
+    <p>
+        First introduced in the Alola region, Regional Forms have become a core concept in modern Pokémon games, 
+        showing how the same species can evolve differently depending on where they live.
+    </p>
+
+    <!-- 🔥 KEY FEATURES -->
+    <h3>⚡ Key Characteristics</h3>
+    <div class="info-cards">
+        <div class="info-box">🌿 <b>Type Changes</b><br>Pokémon may gain completely new typings.</div>
+        <div class="info-box">❄️ <b>Environmental Adaptation</b><br>Design reflects climate and habitat.</div>
+        <div class="info-box">✨ <b>New Abilities</b><br>Some forms unlock exclusive abilities.</div>
+        <div class="info-box">🔄 <b>Different Evolutions</b><br>Evolution paths can change entirely.</div>
+    </div>
+
+    <!-- 📊 TABLE -->
+    <h3>🧬 Example Transformations</h3>
+    <table class="regional-table">
+        <thead>
+            <tr>
+                <th>Pokémon</th>
+                <th>Original Type</th>
+                <th>Regional Form</th>
+                <th>New Type</th>
+                <th>Reason</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Exeggutor</td>
+                <td>Grass/Psychic</td>
+                <td>Alola</td>
+                <td>Grass/Dragon</td>
+                <td>Tropical growth → tall neck</td>
+            </tr>
+            <tr>
+                <td>Vulpix</td>
+                <td>Fire</td>
+                <td>Alola</td>
+                <td>Ice</td>
+                <td>Adapted to snowy mountains</td>
+            </tr>
+            <tr>
+                <td>Weezing</td>
+                <td>Poison</td>
+                <td>Galar</td>
+                <td>Poison/Fairy</td>
+                <td>Pollution purification concept</td>
+            </tr>
+            <tr>
+                <td>Growlithe</td>
+                <td>Fire</td>
+                <td>Hisui</td>
+                <td>Fire/Rock</td>
+                <td>Volcanic, ancient habitat</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 🌎 REGION EXPLANATION -->
+    <h3>🗺️ Regional Influence</h3>
+    <p>
+        Each region introduces its own style of adaptation:
+    </p>
+
+    <ul class="region-list">
+        <li>🌴 <b>Alola:</b> Bright, tropical designs with unexpected type changes</li>
+        <li>⚙️ <b>Galar:</b> Industrial and urban-inspired transformations</li>
+        <li>🏯 <b>Hisui:</b> Ancient, survival-based evolutions</li>
+        <li>🌿 <b>Paldea:</b> Modern biodiversity and ecological influence</li>
+    </ul>
+
+    <!-- 💡 FUN FACT -->
+    <p class="fun-fact">
+        💡 <b>Did You Know?</b> Some regional forms evolve into completely new Pokémon that don't exist in their original regions!
+    </p>
+
+</section>
+
+
+<!-- REGIONS -->
+<section class="regions">
+    <div class="region-card">🌴 Alola<br><span>Tropical Adaptations</span></div>
+    <div class="region-card">⚙️ Galar<br><span>Industrial Evolution</span></div>
+    <div class="region-card">🏯 Hisui<br><span>Ancient Variants</span></div>
+    <div class="region-card">🌿 Paldea<br><span>Modern Adaptations</span></div>
+</section>
+
+<!-- FILTERS -->
+<section class="filters">
+    <input type="text" id="search" placeholder="Search Pokémon...">
+    <select id="regionFilter">
+        <option value="all">All Regions</option>
+        <option value="alola">Alola</option>
+        <option value="galar">Galar</option>
+        <option value="hisui">Hisui</option>
+        <option value="paldea">Paldea</option>
+    </select>
+</section>
+
+<!-- POKEMON GRID -->
+<section class="pokemon-grid" id="pokemonGrid"></section>
+
+<!-- MODAL -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span id="closeBtn">✖</span>
+        <img id="popupImg" class="modal-img" src="" alt="Pokemon Image">
+        <h3 id="popupName"></h3>
+        <div id="popupTypes" class="types"></div>
+        <div id="popupAbilities"></div>
+        <div id="popupStats"></div>
+        <div id="popupEvolutions"></div>
+    </div>
+</div>
+
+<script src="js/regional.js"></script>
+</body>
+</html>

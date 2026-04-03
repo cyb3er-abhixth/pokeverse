@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pokeverse HQ | Pokédex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./Images/pokeball-bg.png" type="image/png" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/pokedex.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="left">
+        <a href="home.html">
+          <img src="Images/pokeball-bg2.png" alt="Pokemon Logo" />
+        </a>
+      </h1>
+      <nav class="menu">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="pokedex.html">Pokédex</a></li>
+          <li><a href="special.html">Special Mechanics</a></li>
+          <li><a href="ashpokemon.html">Team Of Ash</a></li>
+        </ul>
+      </nav>
+
+      <a id="menu-icon"><img src="Images/menu.svg" /></a>
+      <nav id="mobile-menu">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="pokedex.html">Pokédex</a></li>
+          <li><a href="special.html">Special Mechanics</a></li>
+          <li><a href="ashpokemon.html">Team Of Ash</a></li>
+        </ul>
+      </nav>
+      <span class="close"><img src="Images/close.svg" /></span>
+    </header>
+    <span class="overlay"></span>
+
+    <main class="wrapper">
+      <section class="pokedex-search">
+        <input
+          type="text"
+          id="searchPokemon"
+          placeholder="Search Pokémon name, number, or type..."
+        />
+        <select id="typeFilter">
+          <option value="">All Types</option>
+        </select>
+      </section>
+
+      <div class="pokedex-grid" id="pokedexGrid"></div>
+      <p id="noResults" style="text-align: center; display: none">
+        No Pokémon found
+      </p>
+      <div id="loading" style="text-align: center; margin: 20px; display: none">
+        Loading...
+      </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="pokedexModal" class="pokedex-modal">
+      <div class="modal-content">
+        <span class="closeModal">&times;</span>
+        <img id="modalImg" />
+        <h2 id="modalName"></h2>
+        <p id="modalDescription"></p>
+        <p id="modalType"></p>
+        <p id="modalHW"></p>
+        <h3>Abilities</h3>
+        <div id="abilities"></div>
+        <div class="stats">
+          <div class="stat-bar">
+            <strong>HP:</strong>
+            <div class="bar"><div id="statHP"></div></div>
+          </div>
+          <div class="stat-bar">
+            <strong>Attack:</strong>
+            <div class="bar"><div id="statAttack"></div></div>
+          </div>
+          <div class="stat-bar">
+            <strong>Defense:</strong>
+            <div class="bar"><div id="statDefense"></div></div>
+          </div>
+          <div class="stat-bar">
+            <strong>Special Attack:</strong>
+            <div class="bar"><div id="statSpAtk"></div></div>
+          </div>
+          <div class="stat-bar">
+            <strong>Special Defense:</strong>
+            <div class="bar"><div id="statSpDef"></div></div>
+          </div>
+          <div class="stat-bar">
+            <strong>Speed:</strong>
+            <div class="bar"><div id="statSpeed"></div></div>
+          </div>
+        </div>
+        <h3>Evolution</h3>
+        <div id="evolutionTree"></div>
+      </div>
+    </div>
+
+    <script src="./js/pokedex.js"></script>
+  </body>
+</html>

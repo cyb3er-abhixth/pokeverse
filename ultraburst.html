@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokeverse HQ | Ultra Burst</title>
+    <link rel="icon" href="./images/pokeball-bg.png" type="image/png" />
+    <link rel="stylesheet" href="css/ultraburst.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <header>
+        <h1 class="left">
+            <a href="home.html">
+                <img src="images/pokeball-bg2.png" alt="Pokemon Logo" />
+            </a>
+        </h1>
+        <nav class="menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="pokedex.html">Pokédex</a></li>
+                <li><a href="special.html">Special Mechanics</a></li>
+                <li><a href="ashpokemon.html">Team Of Ash</a></li>
+            </ul>
+        </nav>
+
+        <a id="menu-icon"><img src="images/menu.svg" alt="menu"/></a>
+        <nav id="mobile-menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="pokedex.html">Pokédex</a></li>
+                <li><a href="special.html">Special Mechanics</a></li>
+                <li><a href="ashpokemon.html">Team Of Ash</a></li>
+            </ul>
+        </nav>
+        <span class="close"><img src="images/close.svg" alt="close" /></span>
+    </header>
+    <span class="overlay"></span>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>💥 Ultra Burst</h1>
+            <p>
+                Ultra Burst is a special transformation connected to <strong>Necrozma</strong>.
+                By absorbing immense light energy, Necrozma changes into a more powerful and radiant form.
+                It is one of the most mysterious and visually stunning mechanics in the Pokémon world.
+            </p>
+            <button id="burstBtn">Activate Ultra Energy</button>
+        </div>
+        <div class="hero-image">
+            <img id="mainNecrozma" src="images/ultra-necrozma.png" alt="Ultra Necrozma">
+        </div>
+    </section>
+
+    <section class="energy-section reveal">
+        <h2>⚡ Ultra Energy Level</h2>
+        <div class="energy-box">
+            <div class="energy-bar">
+                <div class="energy-fill" id="energyFill"></div>
+            </div>
+            <p id="energyText">Energy Status: Dormant</p>
+        </div>
+    </section>
+
+	<section class="media-stats-section reveal">
+		<div class="video-card">
+			<h2>🎬 Necrozma Transformation</h2>
+
+			<video controls poster="images/ultra-necrozma.png" autoplay loop muted playsinline>
+				<source src="videos/videosultra-necrozma-transform.mp4" type="video/mp4" >
+				Your browser does not support the video tag.
+			</video>
+		</div>
+
+		<div class="battle-stats-card">
+			<h2>🛡️ Ultra Necrozma Battle Stats</h2>
+
+			<div class="stat">
+				<span>HP</span>
+				<div class="stat-bar"><div class="stat-fill hp" style="width: 48.5%;">97</div></div>
+			</div>
+
+			<div class="stat">
+				<span>Attack</span>
+				<div class="stat-bar"><div class="stat-fill atk" style="width: 83.5%;">167</div></div>
+			</div>
+
+			<div class="stat">
+				<span>Defense</span>
+				<div class="stat-bar"><div class="stat-fill def" style="width: 48.5%;">97</div></div>
+			</div>
+
+			<div class="stat">
+				<span>Sp. Attack</span>
+				<div class="stat-bar"><div class="stat-fill spa" style="width: 83.5%;">167</div></div>
+			</div>
+
+			<div class="stat">
+				<span>Sp. Defense</span>
+				<div class="stat-bar"><div class="stat-fill spd" style="width: 48.5%;">97</div></div>
+			</div>
+
+			<div class="stat">
+				<span>Speed</span>
+				<div class="stat-bar"><div class="stat-fill spe" style="width: 64.5%;">129</div></div>
+			</div>
+
+			<div class="bst-box">
+				<h3>Total Base Stats</h3>
+				<p>754</p>
+			</div>
+
+			<div class="stats-extra">
+				<p><strong>Type:</strong> Psychic / Dragon</p>
+				<p><strong>Ability:</strong> Neuroforce</p>
+				<p><strong>Signature Z-Move:</strong> Light That Burns the Sky</p>
+			</div>
+		</div>
+	</section>
+
+    <section class="info-grid reveal">
+        <div class="info-card">
+            <h3>🌟 What is Ultra Burst?</h3>
+            <p>
+                Ultra Burst is a transformation available to Necrozma after it fuses and reaches a higher power state.
+                It allows Necrozma to become <strong>Ultra Necrozma</strong>, a legendary dragon-like form overflowing with light.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>🧬 Who can use it?</h3>
+            <p>
+                Only <strong>Necrozma</strong> can use Ultra Burst, specifically after fusing into
+                <strong>Dusk Mane Necrozma</strong> or <strong>Dawn Wings Necrozma</strong>.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>🔮 Required Item</h3>
+            <p>
+                Ultra Burst requires the special item <strong>Ultranecrozium Z</strong>.
+                This item allows Necrozma to unleash its hidden light and transform during battle.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>🔥 Why is it special?</h3>
+            <p>
+                Unlike many other mechanics, Ultra Burst feels legendary and cosmic.
+                It is tied deeply to story, light, space, and the mystery of Ultra Space.
+            </p>
+        </div>
+    </section>
+
+    <section class="forms-section reveal">
+        <h2>🌌 Necrozma Forms</h2>
+        <div class="forms-grid">
+            <div class="form-card active-form" data-form="base">
+                <img src="images/necrozma.png" alt="Necrozma">
+                <h3>Necrozma</h3>
+                <p>The original dark prism-like form.</p>
+            </div>
+
+            <div class="form-card" data-form="dusk">
+                <img src="images/dusk-mane-necrozma.png" alt="Dusk Mane Necrozma">
+                <h3>Dusk Mane</h3>
+                <p>Necrozma fused with Solgaleo.</p>
+            </div>
+
+            <div class="form-card" data-form="dawn">
+                <img src="images/dawn-wings-necrozma.png" alt="Dawn Wings Necrozma">
+                <h3>Dawn Wings</h3>
+                <p>Necrozma fused with Lunala.</p>
+            </div>
+
+            <div class="form-card" data-form="ultra">
+                <img src="images/ultra-necrozma.png" alt="Ultra Necrozma">
+                <h3>Ultra Necrozma</h3>
+                <p>The ultimate radiant transformation.</p>
+            </div>
+        </div>
+
+        <div class="form-display" id="formDisplay">
+            <h3>Selected Form: Necrozma</h3>
+            <p>
+                Necrozma is a mysterious Legendary Pokémon with the power to absorb light.
+                Its true strength is revealed only through fusion and Ultra Burst.
+            </p>
+        </div>
+    </section>
+
+    <section class="table-section reveal">
+        <h2>📊 Ultra Burst Comparison Table</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Form</th>
+                        <th>Type</th>
+                        <th>Main Feature</th>
+                        <th>Power Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Necrozma</td>
+                        <td>Psychic</td>
+                        <td>Absorbs light energy</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td>Dusk Mane Necrozma</td>
+                        <td>Psychic / Steel</td>
+                        <td>Fusion with Solgaleo</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Dawn Wings Necrozma</td>
+                        <td>Psychic / Ghost</td>
+                        <td>Fusion with Lunala</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Ultra Necrozma</td>
+                        <td>Psychic / Dragon</td>
+                        <td>Ultimate form through Ultra Burst</td>
+                        <td>Extreme</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="lore-section reveal">
+        <h2>📖 Ultra Burst Lore</h2>
+        <p>
+            Necrozma is often described as a being that once shone with blinding brilliance. Over time,
+            it lost its light and became incomplete. Its transformation into Ultra Necrozma represents
+            the return of its former glory — an explosion of celestial energy and overwhelming radiance.
+        </p>
+        <p>
+            This makes Ultra Burst more than just a battle mechanic. It symbolizes restoration, hidden strength,
+            and the awakening of legendary power.
+        </p>
+    </section>
+
+    <section class="fun-facts reveal">
+        <h2>✨ Fun Facts</h2>
+        <div class="facts-container">
+            <div class="fact-card">💡 Ultra Necrozma is one of the brightest-looking Pokémon designs ever.</div>
+            <div class="fact-card">🌠 Its transformation is linked with light and Ultra Space themes.</div>
+            <div class="fact-card">🐉 Ultra Necrozma gains the Dragon type after transformation.</div>
+            <div class="fact-card">🔥 It feels like a mix of legendary lore and explosive battle power.</div>
+        </div>
+    </section>
+
+    <script src="js/ultraburst.js"></script>
+</body>
+</html>

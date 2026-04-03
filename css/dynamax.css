@@ -1,0 +1,251 @@
+/* Dynamax Theme - Galar Power Spot style */
+body {
+	background: linear-gradient(135deg, #ffcb05, #ff1c1c);
+	min-height: 100vh;
+	color: white;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+ul,li {
+	list-style: none;
+	padding-left: 0;
+}
+
+/* Animated Dynamax energy orb */
+.dynamax-hero::after {
+	content: "";
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+	border-radius: 50%;
+	opacity: 0.1;
+	bottom: -150px;
+	left: -150px;
+	animation: pulse 4s ease-in-out infinite;
+	pointer-events: none;
+}
+
+/* Hero Section */
+.dynamax-hero {
+	text-align: center;
+	padding: 60px 20px;
+	position: relative;
+	z-index: 1;
+}
+
+.dynamax-hero h1 {
+	font-size: 3em;
+	margin-bottom: 10px;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.dynamax-hero p {
+	font-size: 1.2em;
+}
+
+/* Dynamax Grid */
+.dynamax-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+	padding: 40px 20px;
+}
+
+/* Dynamax Card */
+.dynamax-card {
+	background: rgba(255, 255, 255, 0.15);
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-radius: 20px;
+	padding: 25px;
+	text-align: center;
+	transition: all 0.4s;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+	backdrop-filter: blur(10px);
+}
+
+.dynamax-card::before {
+	content: "Dynamax";
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: #FF6B35;
+	color: white;
+	padding: 4px 8px;
+	border-radius: 12px;
+	font-size: 0.8em;
+	font-weight: bold;
+	opacity: 0.9;
+}
+
+.dynamax-card.gmax::before {
+	content: "G-Max";
+	background: #A100A1;
+}
+
+.dynamax-card:hover {
+	transform: scale(1.05) translateY(-15px);
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.dynamax-card img {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 15px;
+	border-radius: 50%;
+	border: 3px solid rgba(255,255,255,0.5);
+}
+
+.dynamax-card h2 {
+	margin: 10px 0;
+	font-size: 1.3em;
+}
+
+.dynamax-card p {
+	margin: 8px 0;
+	font-size: 0.95em;
+}
+
+/* Animations */
+@keyframes pulse {
+	0%, 100% { transform: scale(1); opacity: 0.1; }
+	50% { transform: scale(1.2); opacity: 0.2; }
+}
+
+/* Filters */
+.filters {
+	margin-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 15px;
+	padding: 0 20px;
+}
+
+.filters input,
+.filters select {
+	padding: 12px 16px;
+	border-radius: 25px;
+	border: 2px solid rgba(255,255,255,0.3);
+	background: rgba(255,255,255,0.1);
+	color: white;
+	font-size: 1em;
+	outline: none;
+	transition: all 0.3s;
+	backdrop-filter: blur(10px);
+}
+
+.filters input::placeholder {
+	color: rgba(255,255,255,0.7);
+}
+
+.filters input:focus, .filters select:focus {
+	border-color: #FF6B35;
+	background: rgba(255,255,255,0.2);
+}
+
+/* Info Section */
+.dinfo {
+	padding: 40px 20px;
+	max-width: 1100px;
+	margin: auto;
+}
+
+.dinfo h2 {
+	text-align: center;
+	font-size: 2.5em;
+	margin-bottom: 40px;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.dinfo-block {
+	background: rgba(255,255,255,0.12);
+	margin-bottom: 25px;
+	padding: 30px;
+	border-radius: 20px;
+	backdrop-filter: blur(15px);
+	transition: all 0.4s;
+	border: 1px solid rgba(255,255,255,0.2);
+}
+
+.dinfo-block:hover {
+	transform: translateY(-8px);
+	background: rgba(255,255,255,0.22);
+	box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.dinfo-block h3 {
+	font-size: 1.4em;
+	margin-bottom: 15px;
+}
+
+.dinfo-block ul {
+	padding-left: 20px;
+}
+
+.dinfo-block li {
+	margin-bottom: 8px;
+}
+
+/* Table */
+.d-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.d-table th, .d-table td {
+	padding: 15px;
+	text-align: left;
+	border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.d-table th {
+	background: rgba(255,107,53,0.3);
+	font-weight: bold;
+}
+
+.d-table tr:hover {
+	background: rgba(255,255,255,0.1);
+}
+
+.example {
+	margin-top: 15px;
+	padding: 12px;
+	background: rgba(255,255,255,0.1);
+	border-radius: 8px;
+	font-weight: bold;
+	border-left: 4px solid #FF6B35;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+	.dynamax-hero h1 { font-size: 2.4em; }
+	.dynamax-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+}
+
+@media (max-width: 768px) {
+	.dynamax-hero { padding: 40px 15px; }
+	.dynamax-hero h1 { font-size: 2em; }
+	.dynamax-grid { grid-template-columns: 1fr; padding: 25px 15px; }
+	.filters { flex-direction: column; align-items: center; max-width: 300px; }
+	.dinfo { padding: 25px 15px; }
+	.dinfo h2 { font-size: 2em; }
+	.d-table { font-size: 0.9em; }
+}
+
+@media (max-width: 480px) {
+	.dynamax-hero h1 { font-size: 1.6em; }
+	.dynamax-card { padding: 20px 15px; }
+	.dynamax-card img { width: 80px; height: 80px; }
+	.filters input, .filters select { padding: 10px 14px; font-size: 0.95em; }
+}
