@@ -320,7 +320,7 @@ megaList.forEach((pokemon) => {
   card.dataset.gen = pokemon[2];
 
   card.innerHTML = `
-    <img src="Images/pokedex/MEGA EVOLUTIONS/${name}.png">
+    <img src="../images/pokedex/MEGA EVOLUTIONS/${name}.png">
     <h3>${name.replaceAll("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}</h3>
   `;
 
