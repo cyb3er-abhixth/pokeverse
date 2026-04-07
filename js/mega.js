@@ -321,7 +321,7 @@ megaList.forEach((pokemon) => {
 
   card.innerHTML = `
     <img src="../images/pokedex/MEGA EVOLUTIONS/${name}.png">
-    <h3>${name.replaceAll("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}</h3>
+    <h3>${name.replace(/\b\w/g, (l) => l.toUpperCase())}</h3>
   `;
 
   grid.appendChild(card);
@@ -334,7 +334,6 @@ megaList.forEach((pokemon) => {
 
       popupImg.src = `../images/pokedex/MEGA EVOLUTIONS/${name}.png`;
       popupName.innerText = name
-        .replaceAll("-", " ")
         .replace(/\b\w/g, (l) => l.toUpperCase());
 
       const stats = data.stats;
