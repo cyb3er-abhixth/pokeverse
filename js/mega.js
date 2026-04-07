@@ -332,7 +332,7 @@ megaList.forEach((pokemon) => {
 
       popup.style.display = "flex";
 
-      popupImg.src = `Images/pokedex/MEGA EVOLUTIONS/${name}.png`;
+      popupImg.src = `../images/pokedex/MEGA EVOLUTIONS/${name}.png`;
       popupName.innerText = name
         .replaceAll("-", " ")
         .replace(/\b\w/g, (l) => l.toUpperCase());
