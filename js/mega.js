@@ -320,7 +320,7 @@ megaList.forEach((pokemon) => {
   card.dataset.gen = pokemon[2];
 
   card.innerHTML = `
-    <img src="../images/pokedex/MEGA EVOLUTIONS/${name}.png">
+    <img src="../images/pokedex/mega-evolutions/${name}.png">
     <h3>${name.replace(/\b\w/g, (l) => l.toUpperCase())}</h3>
   `;
 
@@ -332,7 +332,7 @@ megaList.forEach((pokemon) => {
 
       popup.style.display = "flex";
 
-      popupImg.src = `../images/pokedex/MEGA EVOLUTIONS/${name}.png`;
+      popupImg.src = `../images/pokedex/mega-evolutions/${name}.png`;
       popupName.innerText = name
         .replace(/\b\w/g, (l) => l.toUpperCase());
 
