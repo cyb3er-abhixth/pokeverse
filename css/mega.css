@@ -238,6 +238,21 @@ body {
   text-transform: uppercase;
 }
 
+.search-box {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.search-box input {
+  padding: 12px 20px;
+  width: 280px;
+  max-width: 90%;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
 /* example colors */
 
 /* TYPE COLORS */

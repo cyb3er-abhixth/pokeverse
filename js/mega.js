@@ -1,4 +1,5 @@
 ﻿window.addEventListener("DOMContentLoaded", () => {
+  // ================= MENU =================
   const menuIcon = document.getElementById("menu-icon");
   const mobileMenu = document.getElementById("mobile-menu");
   const closeBtn = document.querySelector("span.close");
@@ -15,230 +16,294 @@
   overlay.addEventListener("click", toggleMenu);
 });
 
+// ================= ELEMENTS =================
 const grid = document.getElementById("pokemonGrid");
 const genFilter = document.getElementById("genFilter");
-
-genFilter.addEventListener("change", () => {
-  const gen = genFilter.value;
-  const cards = document.querySelectorAll(".card");
-
-  cards.forEach((card) => {
-    card.style.display = gen === "all" || card.dataset.gen === gen ? "block" : "none";
-  });
-});
 
 const popup = document.getElementById("popup");
 const closeBtnPopup = document.getElementById("closeBtn");
 
 const popupName = document.getElementById("popupName");
+const popupImg = document.getElementById("popupImg");
+
 const hp = document.getElementById("hp");
 const atk = document.getElementById("atk");
 const def = document.getElementById("def");
 const spatk = document.getElementById("spatk");
 const spdef = document.getElementById("spdef");
 const speed = document.getElementById("speed");
+
 const ability = document.getElementById("ability");
 const description = document.getElementById("description");
 const types = document.getElementById("types");
 
+// ================= IMAGE SYSTEM =================
+const IMAGE_BASE_PATH = "../images/mega-evolutions/";
+
+function formatMegaImageName(name) {
+  return (
+    name
+      .split("-")
+      .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+      .join("-") + ".png"
+  );
+}
+
+function getMegaImage(name) {
+  return IMAGE_BASE_PATH + formatMegaImageName(name);
+}
+
+// ================= FILTER =================
+genFilter.addEventListener("change", () => {
+  const gen = genFilter.value;
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    card.style.display =
+      gen === "all" || card.dataset.gen === gen ? "block" : "none";
+  });
+});
+
+// ================= DATA =================
 const megaDescriptions = {
-   "venusaur-mega": "Its flower blooms with a brilliant blue light. It fires beams that can incinerate foes.", 
-   "charizard-mega-x": "The overwhelming power that fills its entire body builds and bilds, never leaving even as it takes to the air.",
-    "charizard-mega-y": "It boasts the largest body size of all its forms. It jets around by venting intensive heat from the ports on its body.",
-     "blastoise-mega": "The water jets it fires from the ports in its shell are powerful enough to pierce through steel.",
-      "beedrill-mega": "Its legs have become massive stingers. It can poison a foe just by touching it with these limbs.",
-      "pidgeot-mega": "Its flight is majestic. Taking to the sky, this Pokémon flies at speeds exceeding 200 mph.",
-      "raichu-mega-x": "The electric sacs on the sides of its body discharge massive amounts of electrical energy into the ground.",
-      "raichu-mega-y": "Its fur stands on end as it generates electricity. This Pokémon never shows its cute side.",
-      "clefable-mega": "Its power increases dramatically as its body swells with fairy energy.",
-      "alakazam-mega": "Its brain power is enhanced with a third eye, allowing it to calculate odds of any situation instantly.",
-      "victreebel-mega": "It evolves into a more aggressive form. The vine whip it wields is powerful enough to bind and lift large boulders.",
-      "slowbro-mega": "The Shellder clamped to its tail is fed by the Slowbro's body, and in return, the Shellder enhances its master's mental power.",
-      "gengar-mega": "It slips into the bodies of the living and silently waits for an opportunity to steal the lives of those who become lost in mountains.",
-      "starmie-mega": "Its gem core glows distinctly and its movements become as precise and graceful as a professional dancer's.",
-      "kangaskhan-mega": "The powerful mother grows to a tremendous size, while her young child becomes her shadow.",
-      "pinsir-mega": "Its pincers grow large and impressive in strength. It becomes a formidable opponent.",
-      "gyarados-mega": "This Pokémon's overwhelming power is evident in everything it does. It dominates the skies.",
-      "aerodactyl-mega": "This Pokémon lives by the rule of the survival of the fittest. It mercilessly defeats any Pokémon in its path.",
-      "dragonite-mega": "Its body is covered in metallic, hard scales. Its power is incomparable to other Pokémon.",
-      "mewtwo-mega-x": "Its fighting power is said to increase tenfold. Its aggressive nature is enhanced as well.",
-      "mewtwo-mega-y": "It was artificially created by science. Its psychic power is increased dramatically.",
-      "meganium-mega": "The blooms on its back spread a pleasing aroma that enhances the abilities of its allies.",
-      "feraligatr-mega": "Its power is said to increase to terrifying levels. It becomes a fearless brawler.",
-      "ampharos-mega": "The luminescent power it generates is intense and is said to be visible even from the far side of a mountain.",
-      "steelix-mega": "Its body is hard as steel. It becomes even more resistant to attacks.",
-      "scizor-mega": "Its offensive power is maximized. Its fighting ability is said to increase exponentially.",
-      "heracross-mega": "Its horn shines with an overwhelming sheen that suggests its unparalleled power.",
-      "skarmory-mega": "Its armor becomes even more impenetrable. Its steel wings cut through the air.",
-      "houndoom-mega": "Its power increases to overwhelming levels. It becomes a fearsome predator.",
-      "tyranitar-mega": "Its power surges and overflows. An aura of primal power surrounds its form.",
-      "sceptile-mega": "Its speed is unmatched. It darts about like a jungle's green wind.",
-      "blaziken-mega": "Its power and fighting spirit burn as fiercely as its body temperature.",
-      "swampert-mega": "Its power grows tremendously. It becomes an overwhelmingly powerful opponent.",
-      "gardevoir-mega": "It can create black hole-like distortions and warp space to teleport.",
-      "sableye-mega": "Its body becomes even more sinister as it absorbs darkness itself.",
-      "mawile-mega": "Its other jaw grows huge. Its power is multiplied tenfold.",
-      "aggron-mega": "Its body is harder than steel. It becomes an impenetrable wall of defense.",
-      "medicham-mega": "Its psychic and fighting powers heighten dramatically. It becomes perfectly centered.",
-      "manectric-mega": "Its muscular body glows yellow and generates powerful electric currents.",
-      "sharpedo-mega": "Its sleek form cuts through water like a hot knife through butter.",
-      "camerupt-mega": "Its volcanic power erupts from its body. It becomes a raging force of nature.",
-      "altaria-mega": "It catches fire within its body and becomes a jet-like flyer.",
-      "banette-mega": "The strength of its vindictive aura becomes absolute. It can drive anyone mad with envy.",
-      "chimecho-mega": "Its body rings like a bell as it floats through the air gracefully.",
-      "absol-mega": "Its horn shines with a dark light. Its power becomes more terrible than ever.",
-      "glalie-mega": "It emerges from the ice completely transformed into a savage beast.",
-      "salamence-mega": "It becomes a dragon of overwhelming power. Its intimidating aura is unmatched.",
-      "metagross-mega": "Its four brains working together makes it incredibly intelligent and powerful.",
-      "latias-mega": "Its psychic power is amplified. It becomes swift and graceful beyond compare.",
-      "latios-mega": "Its spiritual power swells up. It soars through the skies at incredible speeds.",
-      "rayquaza-mega": "Its power is unleashed as it rises up. Its overwhelming might is on full display.",
-      "staraptor-mega": "Its wings become magnificent. It takes flight at unprecedented speeds.",
-      "lopunny-mega": "Its soft fur becomes bristly and aggressive. Its fighting power reaches new heights.",
-      "garchomp-mega": "Its power soars. It becomes a dragon of dragon-slayers.",
-      "lucario-mega": "Its aura becomes a brilliant golden color. Its power and momentum increase dramatically.",
-      "abomasnow-mega": "Snow falls around it as its power grows immense, covering the landscape in white.",
-      "gallade-mega": "Its blade appendages grow larger and more powerful. It becomes an unstoppable swordsman.",
-      "froslass-mega": "Its power grows dramatically. It becomes a spirit of the winter winds.",
-      "heatran-mega": "Its volcanic power burns fiercely. It becomes a scorching titan of flame.",
-      "darkrai-mega": "It emerges from the darkness itself, embodying nightmares made manifest.",
-      "emboar-mega": "Its embers burn with tremendous force. It becomes a blazing warrior.",
-      "excadrill-mega": "Its claws become diamond-hard. It drills through anything with ease.",
-      "audino-mega": "Its healing aura sharpens and intensifies. It becomes a beacon of hope.",
-      "scolipede-mega": "Its body length increases immensely. It becomes a venomous force of nature.",
-      "scrafty-mega": "Its crest shines brilliantly. Its fighting spirit reaches explosive levels.",
-      "eelektross-mega": "Its electric power surges to overwhelming levels. It becomes lightning incarnate.",
-      "chandelure-mega": "Its sinister flame burns hotter than ever. It becomes an inferno of power.",
-      "golurk-mega": "Its power overflows. It becomes an unstoppable colossus of strength.",
-      "chesnaught-mega": "Its wooden armor becomes impervious. It is a fortress of nature's protection.",
-      "delphox-mega": "Its psychic power burns like fire. It becomes mystical and powerful.",
-      "greninja-mega": "Its movement becomes faster in sync with its heart. It becomes one with the water.",
-      "pyroar-mega": "Its mane grows ferociously. Its power and beauty increase dramatically.",
-      "floette-mega": "Its flower blooms magnificently. Its power reaches new heights.",
-      "meowstic-mega": "Its psychic power is amplified. It becomes eerily graceful.",
-      "malamar-mega": "Its sinister aura grows stronger. It becomes a deep-sea demon.",
-      "barbaracle-mega": "Its appendages become even more numerous and powerful.",
-      "dragalge-mega": "It becomes a terrifying dragon of the seas, crushing all that oppose it.",
-      "hawlucha-mega": "Its fighting spirit burns brighter. It soars like an eagle in battle.",
-      "zygarde-mega": "Its power collects and manifests. It becomes an avatar of order.",
-      "diancie-mega": "Its body becomes even more crystalline and radiant with beauty.",
-      "crabominable-mega": "Its punches become incredibly powerful. It becomes a force of nature.",
-      "golisopod-mega": "Its armored body becomes even more imposing. It is an undefeatable warrior.",
-      "drampa-mega": "Its draconic power continues to intensify. It becomes a true elder dragon.",
-      "magearna-mega": "Its gears spin at maximum capacity. It reaches peak mechanical performance.",
-      "zeraora-mega": "Its electrical power crackles with uncontrolled fury. It becomes electrocuting incarnate.",
-     }; 
-   
-   const megaList = [ 
-      ["venusaur-mega", 3, 1],
-      ["charizard-mega-x", 6, 1],
-      ["charizard-mega-y",6, 1], 
-      ["blastoise-mega",9, 1],
-     ["beedrill-mega", 15, 1],
-     ["pidgeot-mega", 18, 1],
-     ["raichu-mega-x", 26, 1],
-     ["raichu-mega-y", 26, 1],
-     ["clefable-mega", 36, 1],
-     ["alakazam-mega", 65, 1],
-     ["victreebel-mega", 71, 1],
-     ["slowbro-mega", 80, 1],
-     ["gengar-mega", 94, 1],
-     ["starmie-mega", 121, 1],
-     ["kangaskhan-mega", 115, 1],
-     ["pinsir-mega", 127, 1],
-     ["gyarados-mega", 130, 1],
-     ["aerodactyl-mega", 142, 1],
-     ["dragonite-mega", 149, 1],
-     ["mewtwo-mega-x", 150, 1],
-     ["mewtwo-mega-y", 150, 1],
-     ["meganium-mega", 154, 2],
-     ["feraligatr-mega", 160, 2],
-     ["ampharos-mega", 181, 2],
-     ["steelix-mega", 208, 2],
-     ["scizor-mega", 212, 2],
-     ["heracross-mega", 214, 2],
-     ["skarmory-mega", 227, 2],
-     ["houndoom-mega", 229, 2],
-     ["tyranitar-mega", 248, 2],
-     ["sceptile-mega", 254, 3],
-     ["blaziken-mega", 257, 3],
-     ["swampert-mega", 260, 3],
-     ["gardevoir-mega", 282, 3],
-     ["sableye-mega", 302, 3],
-     ["mawile-mega", 303, 3],
-     ["aggron-mega", 306, 3],
-     ["medicham-mega", 308, 3],
-     ["manectric-mega", 310, 3],
-     ["sharpedo-mega", 319, 3],
-     ["camerupt-mega", 323, 3],
-     ["altaria-mega", 334, 3],
-     ["banette-mega", 354, 3],
-     ["chimecho-mega", 358, 3],
-     ["absol-mega", 359, 3],
-     ["glalie-mega", 362, 3],
-     ["salamence-mega", 373, 3],
-     ["metagross-mega", 376, 3],
-     ["latias-mega", 380, 3],
-     ["latios-mega", 381, 3],
-     ["rayquaza-mega", 384, 3],
-     ["staraptor-mega", 398, 4],
-     ["lopunny-mega", 428, 4],
-     ["garchomp-mega", 445, 4],
-     ["lucario-mega", 448, 4],
-     ["abomasnow-mega", 460, 4],
-     ["gallade-mega", 475, 4],
-     ["froslass-mega", 478, 4],
-     ["heatran-mega", 485, 4],
-     ["darkrai-mega", 491, 4],
-     ["emboar-mega", 500, 5],
-     ["excadrill-mega", 530, 5],
-     ["audino-mega", 531, 5],
-     ["scolipede-mega", 545, 5],
-     ["scrafty-mega", 560, 5],
-     ["eelektross-mega", 604, 5],
-     ["chandelure-mega", 609, 5],
-     ["golurk-mega", 623, 5],
-     ["chesnaught-mega", 652, 6],
-     ["delphox-mega", 655, 6],
-     ["greninja-mega", 658, 6],
-     ["pyroar-mega", 668, 6],
-     ["floette-mega", 670, 6],
-     ["meowstic-mega", 678, 6],
-     ["malamar-mega", 687, 6],
-     ["barbaracle-mega", 689, 6],
-     ["dragalge-mega", 691, 6],
-     ["hawlucha-mega", 701, 6],
-     ["zygarde-mega", 718, 6],
-     ["diancie-mega", 719, 6],
-     ["crabominable-mega", 740, 7],
-     ["golisopod-mega", 768, 7],
-     ["drampa-mega", 780, 7],
-     ["magearna-mega", 801, 7],
-     ["zeraora-mega", 807, 7],
-     
-  ];
+  // ===== KANTO =====
+  "venusaur-mega": "Mega Venusaur gains a thick protective flower bloom that absorbs sunlight and boosts its defensive power to extreme levels.",
 
-megaList.forEach((pokemon) => {
-  const name = pokemon[0];
+  "charizard-mega-x": "Mega Charizard X undergoes a rare type shift into Fire/Dragon, gaining black-blue flames and overwhelming physical power.",
 
+  "charizard-mega-y": "Mega Charizard Y focuses on special attack, reaching extreme heat output that can rival the sun itself.",
+
+  "blastoise-mega": "Mega Blastoise equips a massive cannon system capable of firing pressurized water blasts strong enough to pierce steel.",
+
+  "beedrill-mega": "Mega Beedrill becomes a relentless attacker with reinforced stingers and extreme speed, striking like a swarm of blades.",
+
+  "pidgeot-mega": "Mega Pidgeot achieves incredible aerial mastery, using powerful winds to strike enemies from extreme distances.",
+
+  "alakazam-mega": "Mega Alakazam’s brain power becomes so advanced it can predict outcomes instantly and move before opponents react.",
+
+  "slowbro-mega": "Mega Slowbro is fully armored by Shellder, turning into a heavily fortified tank with extreme defensive resilience.",
+
+  "gengar-mega": "Mega Gengar merges deeper into the shadow realm, becoming a terrifying entity that drags opponents into darkness.",
+
+  "kangaskhan-mega": "Mega Kangaskhan reveals its grown offspring, fighting in perfect sync to overwhelm opponents with coordinated attacks.",
+
+  "pinsir-mega": "Mega Pinsir evolves into a brutal flying fighter with massive claws capable of shredding through steel.",
+
+  "gyarados-mega": "Mega Gyarados becomes even more destructive, embodying pure rage and overwhelming aquatic power.",
+
+  "aerodactyl-mega": "Mega Aerodactyl returns closer to its prehistoric form, becoming faster and more ferocious than ever.",
+
+  "mewtwo-mega-x": "Mega Mewtwo X gains incredible physical strength, becoming one of the strongest fighters ever created.",
+
+  "mewtwo-mega-y": "Mega Mewtwo Y enhances psychic power to unimaginable levels, focusing entirely on overwhelming special attack.",
+
+  // ===== JOHTO =====
+  "ampharos-mega": "Mega Ampharos awakens ancient dragon-like traits, increasing its electric output to radiant levels.",
+
+  "steelix-mega": "Mega Steelix becomes a colossal iron serpent with nearly impenetrable defense and crushing strength.",
+
+  "scizor-mega": "Mega Scizor sacrifices speed for overwhelming power, turning its claws into near-unbreakable cutting weapons.",
+
+  "heracross-mega": "Mega Heracross gains immense horn strength, capable of lifting and launching massive opponents.",
+
+  "houndoom-mega": "Mega Houndoom’s flames burn hotter and more toxic, making it a fearsome dark inferno predator.",
+
+  "tyranitar-mega": "Mega Tyranitar becomes a walking disaster, its power so great it can reshape terrain unintentionally.",
+
+  // ===== HOENN =====
+  "sceptile-mega": "Mega Sceptile gains dragon energy in its tail and becomes a lightning-fast forest assassin.",
+
+  "blaziken-mega": "Mega Blaziken’s speed and fire power combine into devastating martial arts attacks.",
+
+  "swampert-mega": "Mega Swampert becomes a brute-force powerhouse capable of crushing boulders with ease.",
+
+  "gardevoir-mega": "Mega Gardevoir bends space itself, generating miniature black holes in battle.",
+
+  "sableye-mega": "Mega Sableye becomes nearly untouchable, using gem armor to reflect attacks.",
+
+  "mawile-mega": "Mega Mawile’s second jaw grows massive, delivering crushing bite-force attacks.",
+
+  "aggron-mega": "Mega Aggron becomes a pure steel fortress with unmatched defensive capability.",
+
+  "medicham-mega": "Mega Medicham achieves perfect mind-body balance, increasing power beyond normal limits.",
+
+  "manectric-mega": "Mega Manectric generates unstable lightning energy, moving at extreme speeds.",
+
+  "sharpedo-mega": "Mega Sharpedo becomes a high-speed missile of destruction underwater and on land.",
+
+  "camerupt-mega": "Mega Camerupt erupts constantly, turning its body into a living volcano.",
+
+  "altaria-mega": "Mega Altaria becomes a cloud-like dragon of harmony and destructive sound energy.",
+
+  "banette-mega": "Mega Banette is fueled by pure malice, becoming stronger the more it is hated.",
+
+  "absol-mega": "Mega Absol enhances its disaster sensing ability, becoming a harbinger of unavoidable fate.",
+
+  "glalie-mega": "Mega Glalie becomes a frozen predator with jaws capable of crushing anything.",
+
+  "salamence-mega": "Mega Salamence gains unstoppable flight power, slicing through the sky like a weapon.",
+
+  "metagross-mega": "Mega Metagross fuses all brains into a supercomputer-level intelligence and combat power.",
+
+  "latias-mega": "Mega Latias gains enhanced psychic speed and healing aura abilities.",
+
+  "latios-mega": "Mega Latios becomes a high-speed psychic attacker capable of dimensional travel.",
+
+  "rayquaza-mega": "Mega Rayquaza transcends normal evolution and becomes one of the most powerful beings in existence.",
+
+  // ===== KALOS =====
+  "diancie-mega": "Mega Diancie becomes a radiant crystal queen capable of reflecting and amplifying light energy."
+};
+
+// (rest will fallback automatically)
+
+// ================= MEGA LIST =================
+const megaList = [
+  ["venusaur-mega", 3, 1],
+  ["charizard-mega-x", 6, 1],
+  ["charizard-mega-y", 6, 1],
+  ["blastoise-mega", 9, 1],
+  ["alakazam-mega", 65, 1],
+  ["gengar-mega", 94, 1],
+  ["kangaskhan-mega", 115, 1],
+  ["pinsir-mega", 127, 1],
+  ["gyarados-mega", 130, 1],
+  ["aerodactyl-mega", 142, 1],
+  ["mewtwo-mega-x", 150, 1],
+  ["mewtwo-mega-y", 150, 1],
+
+  ["ampharos-mega", 181, 2],
+  ["steelix-mega", 208, 2],
+  ["scizor-mega", 212, 2],
+  ["heracross-mega", 214, 2],
+  ["houndoom-mega", 229, 2],
+  ["tyranitar-mega", 248, 2],
+
+  ["sceptile-mega", 254, 3],
+  ["blaziken-mega", 257, 3],
+  ["swampert-mega", 260, 3],
+  ["gardevoir-mega", 282, 3],
+  ["sableye-mega", 302, 3],
+  ["mawile-mega", 303, 3],
+  ["aggron-mega", 306, 3],
+  ["medicham-mega", 308, 3],
+  ["manectric-mega", 310, 3],
+  ["sharpedo-mega", 319, 3],
+  ["camerupt-mega", 323, 3],
+  ["altaria-mega", 334, 3],
+  ["banette-mega", 354, 3],
+  ["absol-mega", 359, 3],
+  ["glalie-mega", 362, 3],
+  ["salamence-mega", 373, 3],
+  ["metagross-mega", 376, 3],
+  ["latias-mega", 380, 3],
+  ["latios-mega", 381, 3],
+  ["rayquaza-mega", 384, 3],
+
+  ["lopunny-mega", 428, 4],
+  ["garchomp-mega", 445, 4],
+  ["lucario-mega", 448, 4],
+  ["abomasnow-mega", 460, 4],
+  ["gallade-mega", 475, 4],
+  ["audino-mega", 531, 5],
+  ["diancie-mega", 719, 6],
+];
+
+const megaStats = {
+  // ===== KANTO =====
+  "venusaur-mega": { hp: 80, atk: 100, def: 123, spatk: 122, spdef: 120, speed: 80 },
+  "charizard-mega-x": { hp: 78, atk: 130, def: 111, spatk: 130, spdef: 85, speed: 100 },
+  "charizard-mega-y": { hp: 78, atk: 104, def: 78, spatk: 159, spdef: 115, speed: 100 },
+  "blastoise-mega": { hp: 79, atk: 103, def: 120, spatk: 135, spdef: 115, speed: 78 },
+
+  "beedrill-mega": { hp: 65, atk: 150, def: 40, spatk: 15, spdef: 80, speed: 145 },
+  "pidgeot-mega": { hp: 83, atk: 80, def: 80, spatk: 135, spdef: 80, speed: 121 },
+  "alakazam-mega": { hp: 55, atk: 50, def: 65, spatk: 175, spdef: 105, speed: 150 },
+  "slowbro-mega": { hp: 95, atk: 75, def: 180, spatk: 130, spdef: 80, speed: 30 },
+  "gengar-mega": { hp: 60, atk: 65, def: 80, spatk: 170, spdef: 95, speed: 130 },
+  "kangaskhan-mega": { hp: 105, atk: 125, def: 100, spatk: 60, spdef: 100, speed: 100 },
+  "pinsir-mega": { hp: 65, atk: 155, def: 120, spatk: 65, spdef: 90, speed: 105 },
+  "gyarados-mega": { hp: 95, atk: 155, def: 109, spatk: 70, spdef: 130, speed: 81 },
+  "aerodactyl-mega": { hp: 80, atk: 135, def: 85, spatk: 70, spdef: 95, speed: 150 },
+  "mewtwo-mega-x": { hp: 106, atk: 190, def: 100, spatk: 154, spdef: 100, speed: 130 },
+  "mewtwo-mega-y": { hp: 106, atk: 150, def: 70, spatk: 194, spdef: 120, speed: 140 },
+
+  // ===== JOHTO =====
+  "ampharos-mega": { hp: 90, atk: 95, def: 105, spatk: 165, spdef: 110, speed: 45 },
+  "steelix-mega": { hp: 75, atk: 125, def: 230, spatk: 55, spdef: 95, speed: 30 },
+  "scizor-mega": { hp: 70, atk: 150, def: 140, spatk: 65, spdef: 100, speed: 75 },
+  "heracross-mega": { hp: 80, atk: 185, def: 115, spatk: 40, spdef: 105, speed: 75 },
+  "houndoom-mega": { hp: 75, atk: 90, def: 90, spatk: 140, spdef: 90, speed: 115 },
+  "tyranitar-mega": { hp: 100, atk: 164, def: 150, spatk: 95, spdef: 120, speed: 71 },
+
+  // ===== HOENN =====
+  "sceptile-mega": { hp: 70, atk: 110, def: 75, spatk: 145, spdef: 85, speed: 145 },
+  "blaziken-mega": { hp: 80, atk: 160, def: 80, spatk: 130, spdef: 80, speed: 100 },
+  "swampert-mega": { hp: 100, atk: 150, def: 110, spatk: 95, spdef: 110, speed: 70 },
+
+  "gardevoir-mega": { hp: 68, atk: 85, def: 65, spatk: 165, spdef: 135, speed: 100 },
+  "sableye-mega": { hp: 50, atk: 85, def: 125, spatk: 85, spdef: 115, speed: 20 },
+  "mawile-mega": { hp: 50, atk: 105, def: 125, spatk: 55, spdef: 95, speed: 50 },
+  "aggron-mega": { hp: 70, atk: 140, def: 230, spatk: 60, spdef: 80, speed: 50 },
+  "medicham-mega": { hp: 60, atk: 100, def: 85, spatk: 80, spdef: 85, speed: 100 },
+  "manectric-mega": { hp: 70, atk: 75, def: 80, spatk: 135, spdef: 80, speed: 135 },
+  "sharpedo-mega": { hp: 70, atk: 140, def: 70, spatk: 110, spdef: 65, speed: 105 },
+  "camerupt-mega": { hp: 70, atk: 120, def: 100, spatk: 145, spdef: 105, speed: 20 },
+  "altaria-mega": { hp: 75, atk: 110, def: 110, spatk: 110, spdef: 105, speed: 80 },
+  "banette-mega": { hp: 64, atk: 165, def: 75, spatk: 93, spdef: 83, speed: 75 },
+  "absol-mega": { hp: 65, atk: 150, def: 60, spatk: 115, spdef: 60, speed: 115 },
+  "glalie-mega": { hp: 80, atk: 120, def: 80, spatk: 120, spdef: 80, speed: 100 },
+  "salamence-mega": { hp: 95, atk: 145, def: 130, spatk: 120, spdef: 90, speed: 120 },
+  "metagross-mega": { hp: 80, atk: 145, def: 150, spatk: 105, spdef: 110, speed: 110 },
+  "latias-mega": { hp: 80, atk: 100, def: 120, spatk: 140, spdef: 150, speed: 110 },
+  "latios-mega": { hp: 80, atk: 130, def: 100, spatk: 160, spdef: 120, speed: 110 },
+  "rayquaza-mega": { hp: 105, atk: 180, def: 100, spatk: 180, spdef: 100, speed: 115 },
+
+  // ===== KALOS / OTHER =====
+  "diancie-mega": { hp: 50, atk: 160, def: 110, spatk: 160, spdef: 110, speed: 110 }
+};
+
+// ================= CREATE CARDS =================
+megaList.forEach(([name, id, gen]) => {
   const card = document.createElement("div");
   card.className = "card";
-  card.dataset.gen = pokemon[2];
+  card.dataset.gen = gen;
 
-  // ✅ Card without image
-  card.innerHTML = `<h3>${name.replace(/\b\w/g, (l) => l.toUpperCase())}</h3>`;
+  const imgSrc = getMegaImage(name);
+
+  card.innerHTML = `
+    <img src="${imgSrc}" alt="${name}" 
+      onerror="this.src='../images/mega-evolutions/default.png'">
+    <h3>${name.replace(/\b\w/g, l => l.toUpperCase())}</h3>
+  `;
 
   grid.appendChild(card);
 
+  // ================= FETCH DATA (STATS ONLY) =================
+  const baseName = name.split("-mega")[0];
+
+  fetch(`https://pokeapi.co/api/v2/pokemon/${baseName}`)
+    .then(res => res.json())
+    .then(data => {
+      card.dataset.data = JSON.stringify(data);
+    })
+    .catch(err => console.error("Error loading:", name, err));
+
+  // ================= CLICK EVENT =================
   card.onclick = () => {
     if (!card.dataset.data) return;
+
     const data = JSON.parse(card.dataset.data);
 
     popup.style.display = "flex";
+    popupName.innerText = name.replace(/\b\w/g, l => l.toUpperCase());
 
-    popupName.innerText = name.replace(/\b\w/g, (l) => l.toUpperCase());
+    // IMAGE (LOCAL ONLY)
+    popupImg.src = getMegaImage(name);
 
+    // ================= STATS =================
     const stats = data.stats;
+
     hp.style.width = (stats[0].base_stat / 255) * 100 + "%";
     atk.style.width = (stats[1].base_stat / 255) * 100 + "%";
     def.style.width = (stats[2].base_stat / 255) * 100 + "%";
@@ -246,30 +311,27 @@ megaList.forEach((pokemon) => {
     spdef.style.width = (stats[4].base_stat / 255) * 100 + "%";
     speed.style.width = (stats[5].base_stat / 255) * 100 + "%";
 
+    // ================= ABILITY =================
     ability.innerText = data.abilities[0].ability.name;
 
+    // ================= DESCRIPTION =================
     description.innerText =
       megaDescriptions[name] ||
-      "Mega Evolution unlocks the Pokémon's hidden potential and greatly boosts its battle abilities.";
+      "Mega Evolution unlocks hidden potential and drastically boosts battle performance.";
 
+    // ================= TYPES =================
     types.innerHTML = "";
-    data.types.forEach((t) => {
+    data.types.forEach(t => {
       const type = document.createElement("span");
       type.className = "type " + t.type.name;
-      type.innerText = t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1);
+      type.innerText =
+        t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1);
       types.appendChild(type);
     });
   };
-
-  const baseName = name.split("-mega")[0];
-  fetch(`https://pokeapi.co/api/v2/pokemon/${baseName}`)
-    .then((res) => res.json())
-    .then((data) => {
-      card.dataset.data = JSON.stringify(data);
-    })
-    .catch((error) => console.error("Error fetching data for", name, error));
 });
 
+// ================= CLOSE POPUP =================
 closeBtnPopup.onclick = () => {
   popup.style.display = "none";
 };
