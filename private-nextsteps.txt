@@ -1,0 +1,465 @@
+# Pokeverse Production Rebuild Masterplan
+
+## Vision
+
+Transform Pokeverse from a static Pokémon fan website into a production-grade modern Pokémon web application with:
+
+* Full Pokédex
+* Advanced filtering/search
+* Pokémon detail pages
+* Team builder
+* Battle simulator lite
+* Authentication
+* Saved teams/favorites
+* Mobile-first UI
+* Fast performance
+* Premium animations
+* Clean scalable architecture
+
+---
+
+# Recommended Stack
+
+## Frontend
+
+* React 19
+* Vite
+* Tailwind CSS
+* React Router DOM
+* Framer Motion
+* Zustand
+* TanStack Query
+* Axios
+* React Icons
+* React Hot Toast
+* React Flow
+* Swiper
+
+## Backend / Database
+
+Choose ONE:
+
+### Option A (Recommended)
+
+* Firebase
+
+  * Auth
+  * Firestore
+  * Hosting
+  * Storage
+
+### Option B
+
+* Supabase
+
+---
+
+# Core Features
+
+## 1. Pokédex
+
+### Features
+
+* Search Pokémon
+* Filter by:
+
+  * Type
+  * Generation
+  * Ability
+  * Habitat
+  * Color
+* Sort:
+
+  * A-Z
+  * Highest stats
+  * Height
+  * Weight
+* Infinite scrolling
+* Grid/List toggle
+* Favorite system
+
+### APIs
+
+* [https://pokeapi.co/](https://pokeapi.co/)
+
+---
+
+## 2. Pokémon Detail Pages
+
+### Route
+
+/pokemon/:name
+
+### Include
+
+* Official artwork
+* Animated sprites
+* Shiny version toggle
+* Stats
+* Abilities
+* Evolution chain
+* Type weaknesses
+* Type resistances
+* Moves
+* Height/weight
+* Egg groups
+* Gender ratio
+* Habitat
+* Base experience
+* Sound cry
+* Location encounters
+
+---
+
+## 3. Team Builder
+
+### Features
+
+* Add/remove Pokémon
+* Drag and drop ordering
+* Team weaknesses chart
+* Team strengths chart
+* Save teams
+* Export/import teams
+* Team naming
+* Team notes
+
+### Optional
+
+* Competitive suggestions
+* Coverage analysis
+
+---
+
+## 4. Battle Simulator Lite
+
+### Features
+
+* Turn system
+* HP bars
+* Attack animations
+* Basic move damage
+* Type effectiveness
+* AI enemy
+* Move PP
+* Status effects
+
+### Future Expansion
+
+* Multiplayer
+* Online battles
+
+---
+
+## 5. Compare System
+
+### Route
+
+/compare
+
+### Features
+
+* Compare up to 4 Pokémon
+* Stats chart
+* Type comparison
+* Speed comparison
+* Ability comparison
+
+---
+
+## 6. Evolution Explorer
+
+### Features
+
+* Animated evolution tree
+* Branch evolutions
+* Mega evolution display
+* Regional forms
+* Evolution conditions
+
+Use:
+
+* React Flow
+
+---
+
+## 7. Favorites + User Profiles
+
+### Features
+
+* Login/signup
+* Save favorites
+* Save teams
+* Save recently viewed
+* User profile page
+
+---
+
+## 8. Responsive UI
+
+### Requirements
+
+* Fully mobile optimized
+* Tablet support
+* Desktop layouts
+* Bottom mobile nav
+* Touch-friendly controls
+
+---
+
+# Design System
+
+## Visual Style
+
+* Dark premium UI
+* Glassmorphism
+* Neon gradients
+* Animated backgrounds
+* Floating cards
+* Smooth transitions
+
+## Animations
+
+Use Framer Motion for:
+
+* Page transitions
+* Card hover effects
+* Route transitions
+* Loading states
+* Pokémon reveal animations
+
+---
+
+# Folder Structure
+
+```txt
+src/
+├── api/
+├── assets/
+│   ├── images/
+│   ├── sounds/
+│   └── videos/
+├── components/
+│   ├── common/
+│   ├── layout/
+│   ├── pokemon/
+│   ├── team/
+│   └── battle/
+├── context/
+├── data/
+├── hooks/
+├── layouts/
+├── pages/
+│   ├── Home/
+│   ├── Pokedex/
+│   ├── Pokemon/
+│   ├── TeamBuilder/
+│   ├── Compare/
+│   ├── Battle/
+│   └── Profile/
+├── routes/
+├── services/
+├── store/
+├── styles/
+├── utils/
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+# Recommended Packages
+
+```bash
+npm install react-router-dom axios framer-motion zustand react-hot-toast react-icons swiper react-flow-renderer
+
+npm install @tanstack/react-query
+
+npm install tailwindcss @tailwindcss/vite
+```
+
+---
+
+# Performance Requirements
+
+## Mandatory
+
+* Lazy loading routes
+* Image optimization
+* Memoization
+* API caching
+* Skeleton loading
+* Code splitting
+* Lighthouse score above 90
+
+---
+
+# SEO
+
+## Add
+
+* Meta tags
+* Dynamic titles
+* OpenGraph tags
+* Sitemap
+* Robots.txt
+
+---
+
+# Accessibility
+
+## Include
+
+* Keyboard navigation
+* ARIA labels
+* Contrast compliance
+* Screen reader support
+
+---
+
+# Production Deployment
+
+## Hosting
+
+Recommended:
+
+* Vercel
+
+Alternative:
+
+* Netlify
+* Firebase Hosting
+
+---
+
+# GitHub Improvements
+
+## README Must Include
+
+* Screenshots
+* GIF previews
+* Features list
+* Tech stack
+* Setup guide
+* Folder structure
+* Future roadmap
+
+## Add Topics
+
+* pokemon
+* react
+* vite
+* tailwindcss
+* pokedex
+* webapp
+
+---
+
+# Production Feature Priority
+
+## Phase 1
+
+* React migration
+* Routing
+* Pokédex
+* Detail pages
+* Search/filter
+
+## Phase 2
+
+* Favorites
+* Team builder
+* Compare system
+* Animations
+
+## Phase 3
+
+* Authentication
+* Saved teams
+* Profiles
+* Battle simulator
+
+## Phase 4
+
+* Multiplayer concepts
+* AI assistant
+* 3D viewer
+
+---
+
+# Important Engineering Decisions
+
+## State Management
+
+Use Zustand.
+Do NOT overcomplicate with Redux.
+
+## Data Fetching
+
+Use TanStack Query.
+
+## Styling
+
+Use Tailwind only.
+Avoid mixing Bootstrap.
+
+## Component Strategy
+
+Make reusable UI components.
+Avoid giant page files.
+
+---
+
+# Recommended UI Sections
+
+## Homepage
+
+* Hero section
+* Featured Pokémon
+* Trending Pokémon
+* Regions section
+* Type categories
+* CTA buttons
+
+## Pokédex Page
+
+* Search bar
+* Sidebar filters
+* Pokémon grid
+* Infinite scroll
+
+## Pokémon Page
+
+* Hero banner
+* Stats cards
+* Evolution chain
+* Moves table
+* Abilities section
+* Type chart
+
+---
+
+# Future Expansion Ideas
+
+* AI Pokémon assistant
+* Pokémon quizzes
+* Daily Pokémon
+* Pokémon news section
+* TCG card explorer
+* Pokémon anime explorer
+* Achievement system
+* User rankings
+
+---
+
+# Final Goal
+
+Pokeverse should feel like:
+
+* A real modern Pokémon platform
+* A polished portfolio project
+* A production-grade React app
+* A deployable SaaS-style frontend
+
+Do NOT keep it as a collection of random pages.
+Focus on consistency, polish, architecture, and user experience.
